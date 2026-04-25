@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta
+    name="description"
+    content="Aurayah is coming soon: a digital sanctuary for ancient lineage, ritual practice, and modern mystical study."
+  />
+  <title>Aurayah</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#e5e2e1",
+            "on-tertiary": "#512400",
+            "on-tertiary-fixed-variant": "#733600",
+            "error": "#ffb4ab",
+            "primary": "#feca9d",
+            "on-secondary-fixed": "#380135",
+            "on-secondary-container": "#eda4df",
+            "background": "#131313",
+            "on-surface-variant": "#d4c3b8",
+            "surface-container-highest": "#353534",
+            "surface-container-high": "#2a2a2a",
+            "inverse-primary": "#7c5632",
+            "secondary": "#f9afeb",
+            "secondary-fixed-dim": "#f9afeb",
+            "secondary-fixed": "#ffd7f4",
+            "on-surface": "#e5e2e1",
+            "secondary-container": "#703669",
+            "tertiary-fixed": "#ffdbc7",
+            "inverse-on-surface": "#313030",
+            "outline": "#9d8e83",
+            "surface-dim": "#131313",
+            "error-container": "#93000a",
+            "inverse-surface": "#e5e2e1",
+            "tertiary-fixed-dim": "#ffb687",
+            "surface": "#131313",
+            "surface-bright": "#3a3939",
+            "surface-container-lowest": "#0e0e0e",
+            "on-primary-fixed-variant": "#623f1d",
+            "on-secondary": "#511a4c",
+            "outline-variant": "#50453c",
+            "on-tertiary-container": "#763700",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#efbd91",
+            "tertiary": "#ffc9a7",
+            "tertiary-container": "#fda366",
+            "on-error-container": "#ffdad6",
+            "on-primary": "#482909",
+            "on-secondary-fixed-variant": "#6b3164",
+            "on-tertiary-fixed": "#311300",
+            "on-primary-container": "#64411f",
+            "surface-container-low": "#1c1b1b",
+            "primary-container": "#e0af84",
+            "surface-tint": "#efbd91",
+            "surface-container": "#201f1f",
+            "primary-fixed": "#ffdcc0",
+            "surface-variant": "#353534",
+            "on-primary-fixed": "#2d1600"
+          },
+          borderRadius: {
+            DEFAULT: "0.75rem",
+            lg: "1.25rem",
+            xl: "2rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Newsreader", "serif"],
+            body: ["Manrope", "sans-serif"],
+            label: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      vertical-align: middle;
+    }
+
+    body {
+      background-color: #131313;
+      color: #e5e2e1;
+      font-family: "Manrope", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .drop-cap::first-letter {
+      color: #e0af84;
+      float: left;
+      font-family: "Newsreader", serif;
+      font-size: 5rem;
+      line-height: 4rem;
+      padding-right: 0.75rem;
+    }
+
+    .about-panel {
+      display: none;
+    }
+
+    .about-panel:target {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30">
+  <main class="relative">
+    <section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          class="h-full w-full object-cover"
+          alt="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
+          src="assets/aurayah-hero.png"
+        />
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30"></div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-4xl space-y-8 px-6 text-center">
+        <div class="inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-2 backdrop-blur-sm">
+          <p class="font-label text-base uppercase tracking-[0.3em] text-primary">Coming Soon</p>
+        </div>
+        <div class="space-y-4">
+          <h1 class="font-headline text-6xl italic leading-none text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.5)] md:text-8xl lg:text-9xl">
+            Aurayah
+          </h1>
+          <p class="font-headline text-3xl font-light italic leading-tight text-primary opacity-90 drop-shadow-lg md:text-3xl">
+            Mystery of the Heart
+          </p>
+        </div>
+        <p class="mx-auto max-w-xl font-headline text-xl leading-relaxed text-white drop-shadow-md md:text-2xl">
+          Leaf through the living manuscript of your own soul. Aurayah bridges the gap between ancient lineage and modern universalism.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4 sm:gap-6">
+          <a
+            class="rounded-xl bg-primary-container px-8 py-4 font-label text-sm font-bold tracking-widest text-on-primary-container transition-all hover:shadow-[0_0_40px_-5px_rgba(249,175,235,0.4)] sm:px-10"
+            href="#transmission"
+          >
+            READ THE INTRO
+          </a>
+          <a
+            class="rounded-xl border border-white/30 px-8 py-4 font-label text-sm font-bold tracking-widest text-white backdrop-blur-md transition-all hover:bg-white/10 sm:px-10"
+            href="#footer"
+          >
+            STAY IN TOUCH
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="transmission" class="relative z-20 rounded-t-[3rem] bg-surface-container-low px-6 py-24 md:py-32">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-16 text-center">
+          <span class="mb-6 block font-label text-[10px] uppercase tracking-[0.4em] text-primary">Welcome</span>
+          <h2 class="font-headline text-5xl font-light italic leading-tight text-on-surface md:text-7xl">
+            The Alchemy of Silence
+          </h2>
+          <div class="mx-auto mt-8 h-px w-24 bg-primary-container/40"></div>
+        </div>
+
+        <article class="mx-auto max-w-2xl space-y-16">
+          <section>
+            <p class="drop-cap font-headline text-2xl italic leading-relaxed text-on-surface/90 md:text-3xl">
+              Before the first word was uttered in the Great Hall of Aurayah, there was the vibration of the void. We often mistake silence for an absence, a hollow vessel waiting to be filled with the noise of existence. Yet, in the ethereal realms, silence is the primary substance, the lead which we must transmute into the gold of understanding.
+            </p>
+          </section>
+
+          <section class="rounded-lg border border-outline-variant/10 bg-surface-container-low p-8 shadow-2xl backdrop-blur-md">
+            <div class="flex flex-col items-center gap-6 md:flex-row">
+              <div class="relative">
+                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-container text-on-primary-container shadow-lg shadow-primary-container/20">
+                  <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                </div>
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <h3 class="font-headline text-xl font-medium text-on-surface">Guided Attunement: The First Breath</h3>
+                <p class="mt-1 font-label text-sm uppercase tracking-wide text-on-surface-variant">Launching with the full sanctuary</p>
+                <div class="mt-4 h-1 w-full overflow-hidden rounded-full bg-surface-container-highest">
+                  <div class="h-full w-1/3 bg-primary-container shadow-[0_0_10px_rgba(224,175,132,0.5)]"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="space-y-8 font-headline text-xl leading-relaxed text-on-surface/80">
+            <p>
+              The ritual of quietude is not merely the stillness of the tongue, but the deceleration of the spirit. To sit within the archive is to witness the centuries of thought that have settled like fine dust upon the shelves of time. One does not simply read these scrolls; one breathes them.
+            </p>
+            <blockquote class="relative my-12 border-l-2 border-primary-container/40 py-6 pl-10 text-3xl italic text-on-surface">
+              <span class="material-symbols-outlined absolute -left-4 -top-2 text-6xl text-primary-container/20">format_quote</span>
+              True gnosis begins where the internal monologue ends. It is in the gap between breaths that the universe speaks its truest names.
+            </blockquote>
+            <p>
+              Observe the way light moves across the stone. It does not rush to illuminate the shadows; it waits for the shadows to reveal their secrets. This is the alchemy we seek. By surrendering our need for constant definition, we allow the Ethereal Archive to present itself in its raw, unvarnished form.
+            </p>
+          </section>
+
+          <section class="group relative aspect-video w-full overflow-hidden rounded-lg bg-surface-container-highest shadow-2xl">
+            <img
+              alt="A person in ethereal silk robes performing a slow meditative hand ritual in a sun-drenched stone chamber."
+              class="h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110"
+              src="assets/ritual-insight.png"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="flex h-20 w-20 items-center justify-center rounded-full border border-on-surface/20 bg-surface/40 text-primary-container backdrop-blur-xl transition-all group-hover:bg-primary-container group-hover:text-on-primary-container">
+                <span class="material-symbols-outlined text-5xl">play_circle</span>
+              </div>
+            </div>
+            <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
+              <div class="font-headline text-on-surface/90">
+                <span class="mb-1 block font-body text-xs uppercase tracking-widest text-primary-container">Ritual Insight</span>
+                <p class="text-lg">Shadow Work &amp; Light Filtration</p>
+              </div>
+              <span class="rounded-full bg-surface/60 px-3 py-1 font-body text-xs text-on-surface/60 backdrop-blur-sm">Soon</span>
+            </div>
+          </section>
+
+          <section class="space-y-8 font-headline text-xl leading-relaxed text-on-surface/80">
+            <p>
+              As you close this digital parchment, carry the weight of the silence with you. It is a heavy gift, one that requires strength to hold but offers infinite clarity once mastered. The archive is always open to those who know how to listen with their souls rather than their ears.
+            </p>
+          </section>
+        </article>
+
+        <section class="mx-auto mt-24 max-w-2xl rounded-lg border border-primary-container/15 bg-surface-container-high/40 p-8 shadow-2xl backdrop-blur-md md:p-10">
+          <div class="mb-8 text-center">
+            <h2 class="font-headline text-4xl italic text-on-surface md:text-5xl">Stay in touch</h2>
+            <p class="mx-auto mt-4 max-w-md font-body text-sm leading-relaxed text-on-surface-variant">
+              Receive email updates as Aurayah opens.
+            </p>
+          </div>
+          <iframe
+            data-tally-src="https://tally.so/embed/Pd20ld?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="214"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Aurayah Waitlist"
+          ></iframe>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="w-full border-t border-outline-variant/10 bg-[#131313] py-12">
+    <div class="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4">
+      <div class="font-headline text-lg uppercase tracking-[0.5em] text-[#E0AF84]">Aurayah</div>
+      <a class="font-body text-[10px] uppercase tracking-[0.3em] text-[#E0AF84]/40 transition-colors hover:text-[#E0AF84]" href="#about">About</a>
+      <p class="max-w-md text-center font-body text-[10px] uppercase leading-relaxed tracking-[0.2em] text-[#E0AF84]/40">
+        &copy; 2026 AURAYAH.
+      </p>
+    </div>
+  </footer>
+
+  <section id="about" class="about-panel fixed inset-0 z-50 items-center justify-center bg-background/95 px-6 py-12 backdrop-blur-xl">
+    <div class="w-full max-w-xl rounded-lg border border-outline-variant/20 bg-surface-container-low p-8 text-center shadow-2xl">
+      <p class="mb-4 font-label text-[10px] uppercase tracking-[0.4em] text-primary-container/70">About Aurayah</p>
+      <h2 class="mb-8 font-headline text-4xl italic text-on-surface">Contact</h2>
+      <div class="space-y-3 font-body text-sm leading-relaxed text-on-surface-variant">
+        <p>Aurayah<br />PO Box 3588<br />Kingman, AZ 86402</p>
+        <p>+1 (928) 316-6096</p>
+      </div>
+      <a
+        class="mt-10 inline-flex items-center justify-center rounded-full border border-primary-container/30 px-8 py-3 font-label text-xs font-bold uppercase tracking-[0.25em] text-primary-container transition-colors hover:bg-primary-container hover:text-on-primary-container"
+        href="#footer"
+      >
+        Back
+      </a>
+    </div>
+  </section>
+  <script>
+    var d = document;
+    var w = "https://tally.so/widgets/embed.js";
+    var v = function () {
+      if (typeof Tally !== "undefined") {
+        Tally.loadEmbeds();
+      } else {
+        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+          e.src = e.dataset.tallySrc;
+        });
+      }
+    };
+    if (typeof Tally !== "undefined") {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
+</body>
+</html>
