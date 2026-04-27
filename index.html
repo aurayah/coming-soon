@@ -11,6 +11,8 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="./assets/aurayah-hero.mp4" rel="preload" as="video" type="video/mp4" />
+  <link href="./assets/aurayah-hero-reverse.mp4" rel="preload" as="video" type="video/mp4" />
   <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
     rel="stylesheet"
@@ -125,11 +127,19 @@
   <main class="relative">
     <section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img
+        <video
+          id="aurayah-hero-video"
           class="h-full w-full object-cover"
-          alt="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
-          src="./assets/aurayah-hero.png"
-        />
+          autoplay
+          muted
+          playsinline
+          preload="auto"
+          data-forward-src="./assets/aurayah-hero.mp4"
+          data-reverse-src="./assets/aurayah-hero-reverse.mp4"
+          aria-label="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
+        >
+          <source src="./assets/aurayah-hero.mp4" type="video/mp4" />
+        </video>
         <div class="absolute inset-0 bg-black/45"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30"></div>
       </div>
@@ -290,5 +300,39 @@
       </a>
     </div>
   </section>
+  <script>
+    var heroVideo = document.getElementById("aurayah-hero-video");
+
+    if (heroVideo) {
+      var heroPlaybackRate = 0.8;
+      var playingReverse = false;
+      var forwardSrc = heroVideo.dataset.forwardSrc;
+      var reverseSrc = heroVideo.dataset.reverseSrc;
+
+      var setHeroPlayback = function () {
+        heroVideo.playbackRate = heroPlaybackRate;
+      };
+
+      var playHeroVideo = function () {
+        heroVideo.muted = true;
+        setHeroPlayback();
+        var playPromise = heroVideo.play();
+
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(function () {});
+        }
+      };
+
+      heroVideo.addEventListener("loadedmetadata", setHeroPlayback);
+      heroVideo.addEventListener("ratechange", setHeroPlayback);
+      heroVideo.addEventListener("ended", function () {
+        playingReverse = !playingReverse;
+        heroVideo.src = playingReverse ? reverseSrc : forwardSrc;
+        heroVideo.load();
+        playHeroVideo();
+      });
+      playHeroVideo();
+    }
+  </script>
 </body>
 </html>
