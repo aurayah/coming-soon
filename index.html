@@ -494,6 +494,15 @@
       <h2 class="mb-8 font-headline text-4xl italic text-on-surface">Contact</h2>
       <div class="space-y-3 font-body text-sm leading-relaxed text-on-surface-variant">
         <p>Aurayah<br />PO Box 3588<br />Kingman, AZ 86402</p>
+        <p>
+          <a
+            id="contact-email"
+            class="transition-colors hover:text-primary-container"
+            data-user="connect"
+            data-domain="aurayah.org"
+            href="#contact"
+          >connect [at] aurayah [dot] org</a>
+        </p>
         <p>+1 (928) 316-6096</p>
       </div>
       <a
@@ -525,8 +534,15 @@
     </div>
   </section>
   <script>
+    var contactEmail = document.getElementById("contact-email");
     var heroVideo = document.getElementById("aurayah-hero-video");
     var heroFallback = document.getElementById("aurayah-hero-fallback");
+
+    if (contactEmail) {
+      var emailAddress = contactEmail.dataset.user + "@" + contactEmail.dataset.domain;
+      contactEmail.textContent = emailAddress;
+      contactEmail.href = "mailto:" + emailAddress;
+    }
 
     if (heroVideo) {
       var heroPlaybackRate = 0.7;
