@@ -563,10 +563,10 @@
       playHeroVideo();
 
       fallbackTimer = setTimeout(function () {
-        if (heroVideo.paused || heroVideo.currentTime === 0) {
+        if (heroVideo.paused) {
           showHeroFallback();
         }
-      }, 1800);
+      }, 3500);
     }
   </script>
 </body>
