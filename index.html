@@ -121,6 +121,42 @@
     .about-panel:target {
       display: flex;
     }
+
+    .article-image-card .article-image-glow {
+      opacity: 0.55;
+      transition: opacity 1200ms ease-out;
+    }
+
+    .article-image-card .article-image-media {
+      transition: transform 1200ms ease-out;
+    }
+
+    .article-image-card:has(.article-image-hover-target:hover) .article-image-glow {
+      opacity: 1;
+    }
+
+    .article-image-card:has(.article-image-hover-target:hover) .article-image-media {
+      transform: scale(1.01);
+    }
+
+    @supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+      .article-image-card .article-image-glow {
+        opacity: 0.55;
+        transition: none;
+      }
+
+      .article-image-card .article-image-media {
+        transition: transform 1200ms ease-out;
+      }
+
+      .article-image-card:has(.article-image-hover-target:hover) .article-image-glow {
+        opacity: 0.55;
+      }
+
+      .article-image-card:has(.article-image-hover-target:hover) .article-image-media {
+        transform: scale(1.01);
+      }
+    }
   </style>
 </head>
 <body class="bg-background text-on-background selection:bg-primary/30">
@@ -199,7 +235,7 @@
 
         <article class="mx-auto max-w-2xl space-y-8">
           <section>
-            <p class="drop-cap font-headline text-2xl italic leading-relaxed text-on-surface/90 md:text-3xl pb-8">
+            <p class="drop-cap font-headline text-3xl italic leading-relaxed text-on-surface/90 pb-8">
               There is a level at which the mind may be studied as process, pattern, circuitry, rhythm. And this is not false. The physiological mind is real in its own domain.
             </p>
           </section>
@@ -383,7 +419,17 @@
             <p class="pb-12">
               The dawning recognition that what we are cannot be contained within a self image.
             </p>
-            <div class="mx-auto h-px w-24 bg-primary-container/40"></div>
+            <div class="article-image-card my-12 relative">
+              <div class="article-image-glow pointer-events-none absolute -inset-5 z-0 rounded-xl bg-primary/30 blur-3xl"></div>
+              <div class="relative z-10 rounded-xl">
+                <img
+                  alt="Mystical temple interior illuminated by warm golden light."
+                  class="article-image-media w-full h-auto rounded-xl shadow-[0_0_40px_rgba(224,175,132,0.15)] brightness-90 contrast-125"
+                  src="./assets/aurayah-temple.jpg"
+                />
+                <div class="article-image-hover-target absolute inset-0 z-20 rounded-xl"></div>
+              </div>
+            </div>
             <p class="font-headline text-3xl italic leading-relaxed text-on-surface/90 pt-12 pb-6">
               So this is the invitation...
             </p>
@@ -519,11 +565,11 @@
       <p class="mb-4 font-label text-[10px] uppercase tracking-[0.4em] text-primary-container/70">About</p>
       <h2 class="mb-8 font-headline text-4xl italic text-on-surface">AURAYAH</h2>
       <div class="mx-auto max-w-xl space-y-5 text-left font-body text-sm leading-relaxed text-on-surface-variant">
-        <p><span class="text-base text-primary-container"><strong>AU</strong> - Gold</span><br />The highest expression. What is refined, enduring, and true.</p>
-        <p><span class="text-base text-primary-container"><strong>RA</strong> - Source</span><br />The origin of light. The creative force that gives rise to life.</p>
-        <p><span class="text-base text-primary-container"><strong>AURA</strong> - Field of Light</span><br />The subtle presence that surrounds and moves through all things.</p>
-        <p><span class="text-base text-primary-container"><strong>Y</strong> - The Living Thread</span><br />A sound carried across traditions, pointing to spirit, movement, and &quot;The way&quot;.</p>
-        <p><span class="text-base text-primary-container"><strong>AH</strong> - Breath into Form</span><br />The moment the unseen becomes lived. Spirit, expressed.</p>
+        <p><span class="text-base text-primary-container">AU - Gold</span><br />The highest expression. What is refined, enduring, and true.</p>
+        <p><span class="text-base text-primary-container">RA - Source</span><br />The origin of Light. The creative force that gives rise to life.</p>
+        <p><span class="text-base text-primary-container">AURA - Field of Light</span><br />The subtle presence that surrounds and moves through all things.</p>
+        <p><span class="text-base text-primary-container">Y - The Living Thread</span><br />A sound carried across traditions, pointing to Spirit, movement, and &quot;The Way&quot;.</p>
+        <p><span class="text-base text-primary-container">AH - Breath into Form</span><br />The moment the unseen becomes lived. Spirit, expressed.</p>
       </div>
       <a
         class="mt-10 inline-flex items-center justify-center rounded-full border border-primary-container/30 px-8 py-3 font-label text-xs font-bold uppercase tracking-[0.25em] text-primary-container transition-colors hover:bg-primary-container hover:text-on-primary-container"
