@@ -129,13 +129,13 @@
       <div class="absolute inset-0 z-0">
         <img
           id="aurayah-hero-fallback"
-          class="hidden h-full w-full object-cover"
+          class="h-full w-full object-cover"
           src="./assets/aurayah-hero.png"
           alt="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
         />
         <video
           id="aurayah-hero-video"
-          class="h-full w-full object-cover"
+          class="hidden h-full w-full object-cover"
           autoplay
           loop
           muted
@@ -530,19 +530,17 @@
 
     if (heroVideo) {
       var heroPlaybackRate = 0.7;
-      var fallbackTimer;
-
       var setHeroPlayback = function () {
         heroVideo.playbackRate = heroPlaybackRate;
       };
 
-      var showHeroFallback = function () {
+      var showHeroVideo = function () {
         if (!heroFallback) {
           return;
         }
 
-        heroVideo.classList.add("hidden");
-        heroFallback.classList.remove("hidden");
+        heroFallback.classList.add("hidden");
+        heroVideo.classList.remove("hidden");
       };
 
       var playHeroVideo = function () {
@@ -551,22 +549,14 @@
         var playPromise = heroVideo.play();
 
         if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(showHeroFallback);
+          playPromise.catch(function () {});
         }
       };
 
       heroVideo.addEventListener("loadedmetadata", setHeroPlayback);
       heroVideo.addEventListener("ratechange", setHeroPlayback);
-      heroVideo.addEventListener("playing", function () {
-        clearTimeout(fallbackTimer);
-      });
+      heroVideo.addEventListener("playing", showHeroVideo);
       playHeroVideo();
-
-      fallbackTimer = setTimeout(function () {
-        if (heroVideo.paused) {
-          showHeroFallback();
-        }
-      }, 3500);
     }
   </script>
 </body>
