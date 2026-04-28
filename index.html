@@ -127,6 +127,12 @@
   <main class="relative">
     <section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
+        <img
+          id="aurayah-hero-fallback"
+          class="hidden h-full w-full object-cover"
+          src="./assets/aurayah-temple.jpg"
+          alt="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
+        />
         <video
           id="aurayah-hero-video"
           class="h-full w-full object-cover"
@@ -135,6 +141,7 @@
           muted
           playsinline
           preload="auto"
+          poster="./assets/aurayah-temple.jpg"
           aria-label="Deep atmospheric view of a mystical ancient temple interior with golden light filtering through celestial architecture."
         >
           <source src="./assets/aurayah-hero-loop.mp4" type="video/mp4" />
@@ -519,12 +526,23 @@
   </section>
   <script>
     var heroVideo = document.getElementById("aurayah-hero-video");
+    var heroFallback = document.getElementById("aurayah-hero-fallback");
 
     if (heroVideo) {
       var heroPlaybackRate = 0.7;
+      var fallbackTimer;
 
       var setHeroPlayback = function () {
         heroVideo.playbackRate = heroPlaybackRate;
+      };
+
+      var showHeroFallback = function () {
+        if (!heroFallback) {
+          return;
+        }
+
+        heroVideo.classList.add("hidden");
+        heroFallback.classList.remove("hidden");
       };
 
       var playHeroVideo = function () {
@@ -533,13 +551,22 @@
         var playPromise = heroVideo.play();
 
         if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(function () {});
+          playPromise.catch(showHeroFallback);
         }
       };
 
       heroVideo.addEventListener("loadedmetadata", setHeroPlayback);
       heroVideo.addEventListener("ratechange", setHeroPlayback);
+      heroVideo.addEventListener("playing", function () {
+        clearTimeout(fallbackTimer);
+      });
       playHeroVideo();
+
+      fallbackTimer = setTimeout(function () {
+        if (heroVideo.paused || heroVideo.currentTime === 0) {
+          showHeroFallback();
+        }
+      }, 1800);
     }
   </script>
 </body>
