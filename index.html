@@ -14,7 +14,7 @@
   <link href="./assets/aurayah-hero-loop.mp4" rel="preload" as="video" type="video/mp4" />
   <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
     rel="stylesheet"
   />
   <link
@@ -84,8 +84,8 @@
           },
           fontFamily: {
             headline: ["Newsreader", "serif"],
-            body: ["Manrope", "sans-serif"],
-            label: ["Manrope", "sans-serif"]
+            body: ["Quicksand", "sans-serif"],
+            label: ["Quicksand", "sans-serif"]
           }
         }
       }
@@ -101,7 +101,7 @@
     body {
       background-color: #131313;
       color: #e5e2e1;
-      font-family: "Manrope", sans-serif;
+      font-family: "Quicksand", sans-serif;
       overflow-x: hidden;
     }
 
@@ -133,11 +133,11 @@
       transition: transform 1200ms ease-out;
     }
 
-    .article-image-card:has(.article-image-hover-target:hover) .article-image-glow {
+    .article-image-card:hover .article-image-glow {
       opacity: 1;
     }
 
-    .article-image-card:has(.article-image-hover-target:hover) .article-image-media {
+    .article-image-card:hover .article-image-media {
       transform: scale(1.01);
     }
 
@@ -151,11 +151,11 @@
         transition: transform 1200ms ease-out;
       }
 
-      .article-image-card:has(.article-image-hover-target:hover) .article-image-glow {
+      .article-image-card:hover .article-image-glow {
         opacity: 0.55;
       }
 
-      .article-image-card:has(.article-image-hover-target:hover) .article-image-media {
+      .article-image-card:hover .article-image-media {
         transform: scale(1.01);
       }
     }
@@ -230,7 +230,7 @@
         <div class="mb-16 text-center">
           <span class="mb-6 block font-label text-[10px] uppercase tracking-[0.4em] text-primary">Welcome</span>
           <h2 class="font-headline text-5xl font-light italic leading-tight text-on-surface md:text-7xl">
-            Beyond the Physiological Mind
+            Shattering the Illusory You
           </h2>
           <div class="mx-auto mt-8 h-px w-24 bg-primary-container/40"></div>
         </div>
@@ -238,7 +238,7 @@
         <article class="mx-auto max-w-2xl space-y-8">
           <section>
             <p class="font-headline text-3xl italic leading-relaxed text-on-surface/90 pb-8">
-              <span class="drop-cap-letter" aria-hidden="true">T</span><span class="sr-only">T</span>here is a level at which the mind may be studied as process, pattern, circuitry, rhythm. And this is not false. The physiological mind is real in its own domain.
+              <span class="drop-cap-letter" aria-hidden="true">T</span><span class="sr-only">T</span>here is a level at which the habitual system may be studied as process, pattern, circuitry, rhythm. And this is not false. The illusory identity is real in its own domain.
             </p>
           </section>
 
@@ -426,10 +426,9 @@
               <div class="relative z-10 rounded-xl">
                 <img
                   alt="Mystical temple interior illuminated by warm golden light."
-                  class="article-image-media w-full h-auto rounded-xl shadow-[0_0_40px_rgba(224,175,132,0.15)] brightness-90 contrast-125"
+                  class="article-image-media w-full h-auto rounded-xl shadow-[0_0_40px_rgba(224,175,132,0.15)]"
                   src="./assets/aurayah-temple.jpg"
                 />
-                <div class="article-image-hover-target absolute inset-0 z-20 rounded-xl"></div>
               </div>
             </div>
             <p class="font-headline text-3xl italic leading-relaxed text-on-surface/90 pt-12 pb-6">
